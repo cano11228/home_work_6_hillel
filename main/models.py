@@ -1,9 +1,9 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
 
-User = get_user_model()
+class CustomUser(AbstractUser):
+    date_of_birth = models.DateField(null=True, blank=True)
 
 class UserProfile(models.Model):
     bio = models.CharField(max_length=150, null=True, blank=True)
-    gender = models.CharField(max_length=7, null=True, blank=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)

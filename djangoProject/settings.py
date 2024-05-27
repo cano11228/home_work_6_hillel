@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -70,22 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangoProject.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'home_work_6',
-        'USER': 'postgres',
-        'PASSWORD': '19960812',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 
 
 # Password validation
@@ -129,3 +113,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'main.CustomUser'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'home_work_6_1',
+        'USER': 'postgres',
+        'PASSWORD': '19960812',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
